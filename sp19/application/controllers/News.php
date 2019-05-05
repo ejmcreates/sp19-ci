@@ -12,8 +12,8 @@ class News extends CI_Controller {
 
        public function index()
        {
-           $this->config->set_item('title', 'Seattle Sports News'); 
-           $data['news'] = $this->news_model->get_news();
+            $this->config->set_item('title', 'Seattle Sports News'); 
+            $data['news'] = $this->news_model->get_news();
             $data['title'] = 'News archive';
             $this->load->view('news/index', $data);
        }
@@ -44,6 +44,7 @@ class News extends CI_Controller {
     
     public function create()
     {
+        $this->config->set_item('title', 'Add A News Article');
         $this->load->helper('form');
         $this->load->library('form_validation');
 

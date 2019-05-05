@@ -12,5 +12,4 @@ $config['theme'] = 'themes/bootswatch/';
 $config['nav1']=array(
     'news' => 'News',
     'news/create' => 'Add News'
-
 );
