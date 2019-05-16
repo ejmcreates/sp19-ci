@@ -5,6 +5,7 @@ class Pics extends CI_Controller {
         public function __construct()
         {
             parent::__construct();
+            $this->load->model('pics_model');
             /*
             $this->config->set_item('banner', 'News Section');
             $this->load->model('news_model');
@@ -14,10 +15,10 @@ class Pics extends CI_Controller {
 
        public function index()
        {
-           $api_key=$this->config->item('flickrKey');
+           //$api_key=$this->config->item('flickrKey');
       
             //$api_key = '5897768a696525fcdfc46c72453eb505';
-            $tags = 'bears,polar';
+            /*$tags = 'bears,polar';
 
             $perPage = 25;
             $url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search';
@@ -28,7 +29,7 @@ class Pics extends CI_Controller {
             $url.= '&nojsoncallback=1';
 
             $response = json_decode(file_get_contents($url));
-            $pics = $response->photos->photo;
+            $pics = $response->photos->photo;*/
 
             /*
             echo "<pre>";
@@ -36,6 +37,11 @@ class Pics extends CI_Controller {
             echo "</pre>";
             die;
             */
+           $tags = 'seahawks';
+           
+           $pics = $this->pics_model->get_pics($tags);
+           
+           
 
             foreach($pics as $pic){
 
